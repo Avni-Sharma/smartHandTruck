@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% set active_page = "order" %}
+
+{% block body %}
+    <!--Header for the order form -->
+    <div class="ui segment">
+      <h2 class="ui center aligned header">Order Form</h2>
+    </div>
+
+   <main class="container">
+    <form action="/submitorder" method="POST">
+    <div class="row">
+    <!--Customer/Employee ID-->
+    <div class="col-lg-12 col-md-12 col-ms-12 col-xs-12">
+    <p id="steps"><b>1.) Please Enter Customer and Employee ID.</b></p><br>
+        <label for="CustomerID"> Customer ID</label>
+        <input type="number" name="CustomerID" id="CustomerID" required>
+
+        <label for="EmployeeID"> Employee ID</label>
+
+        <select name="EmployeeID" style="font-family:verdana" id="EmployeeID" required>
+            {% for j in employeelist %}
+	            <option value={{j[0]}}>{{j[1]}}</option>
+            {% endfor %}
+         </select>
+         <br><br><br>
+    </div>
+
+    <!--Insert Table of Products -->
+    <div class="col-lg-12 col-md-12 col-ms-12 col-xs-12">
+        <p id="steps"><b> 2.) Select Up To 5 Products With Quantity Less Than 10.</b></p>
+        <table class="ui selectable inverted table">
+            <thead>
+                <tr>
+                  <th>Product ID</th>
+                  <th>Product Name</th>
+                  <th>Color</th>
+                  <th>Price per unit</th>
+                  <th>Quantity</th>
+                </tr>
+             </thead>
+
+          <tbody>
+              {% for res in result %}
+                <tr>
+                    <td>{{ res[0] }}</td>
+                    <td>{{ res[1] }}</td>
+                    <td>{{ res[2] }}</td>
+                    <td>{{ res[3] }}</td>
+                    <td><input type="text" id="q{{res[0]}}" name="q{{res[0]}}"></td>
+                </tr>
+              {% endfor %}
+          </tbody>
+        </table>
+    <!--<div>-->
+    <!--    <br>-->
+    <!--    <p id="steps"><b>3.) Review Order Total. </b></p>-->
+    <!--        <table>-->
+    <!--            <thead>-->
+    <!--                <tr>-->
+    <!--                    <th>Order Total</th>-->
+    <!--                </tr>-->
+    <!--                <tr>-->
+                        <!-- Trying to do a sum function -->
+    <!--                    <td>{{ sum }}</td>-->
+    <!--                </tr>-->
+    <!--            </thead>-->
+    <!--        </table>-->
+    <!--</div>-->
+    </div>
+    <!-- End of Table of Products-->
+
+    <!-- Submit Button -->
+    <div class="col-lg-12 col-md-12 col-ms-12 col-xs-12">
+    <input type="submit" class="btn-success btn-lg">
+    </div>
+
+    </div>
+    </form>
+    </main>
+{% endblock %}

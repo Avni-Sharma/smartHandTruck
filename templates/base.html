@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+	<meta charset="utf-8">
+	<title>Smart Trucks</title>
+		<!--Compiled and minified CSS-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!--jQuery CDN-->
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+
+  <!--Compiled and minified JavaScript-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js">
+	</script>
+
+
+	<link href="static/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="pushable">
+
+	<!-- Following Menu -->
+
+{% set navigation_bar = [
+    ('/index', 'index', 'Home'),
+    ('/customertable', 'customertable', 'Customer'),
+    ('/product', 'product', 'Product'),
+    ('/supplier', 'supplier', 'Supplier'),
+    ('/employee', 'employee', 'Employee'),
+    ('/order', 'order', 'Order'),
+] -%}
+
+{% set active_page = active_page|default('index') -%}
+
+	<!-- Page Contents -->
+	<div class="pusher">
+		<div class="ui inverted vertical masthead center aligned segment">
+      <a href="/index"><h1>Smart Hand Trucks Inc.</h1></a>
+			<div class="ui container">
+				<div class="ui large secondary inverted pointing menu">
+				  {% for href, id, caption in navigation_bar %}
+				    <a href="{{ href|e }}" class="{% if id == active_page %}active{% endif %} item">{{ caption|e }}</a>
+				  {% endfor %}
+				  <!--<a href="/index" class="item">Home</a>-->
+      <!--    <a href="/register" class="item">Register Customer</a>-->
+      <!--    <a href="/customertable"class="item">Customer</a>-->
+      <!--    <a href="/product" class="item">Product</a>-->
+      <!--    <a href="/supplier" class="item">Supplier</a>-->
+      <!--    <a href="/employee" class="item">Employee</a>-->
+      <!--    <a href="/order" class="item">Order</a>-->
+        </div>
+      </div>
+    </div>
+
+{% block body %}
+{% endblock %}
+
+
+
+    <div class="sticky-footer">
+    <div class="ui inverted vertical footer segment">
+      <div class="ui container">
+        <div class="ui stackable inverted divided equal height stackable grid">
+          <div class="three wide column">
+            <h4 class="ui inverted header">About</h4>
+            <div class="ui inverted link list">
+              <a href="#" class="item">Sitemap</a>
+              <a href="#" class="item">Contact Us</a>
+            </div>
+          </div>
+          <div class="three wide column">
+            <h4 class="ui inverted header">Services</h4>
+            <div class="ui inverted link list">
+              <a href="#" class="item">Pre-Order</a>
+              <a href="#" class="item">FAQ</a>
+              <a href="#" class="item">How To Access</a>
+            </div>
+          </div>
+          <div class="seven wide column">
+            <h4 class="ui inverted header">Footer Header</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

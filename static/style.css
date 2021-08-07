@@ -1,0 +1,97 @@
+body{
+  min-height: 100vh;
+}
+
+.sticky-footer{
+  position: sticky;
+  top:100%;
+}
+
+#q1, #q2, #q3, #q4, #q5, #q6, #q7, #q8, #q9, #q10, #q11, #q12 {color: black;
+}
+
+
+
+#steps {font-size:20px;
+
+}
+
+form {background-color: #CECECE;
+      border-radius: 15px;
+      padding: 15px;
+}
+
+#intro {text-align: center;
+        padding-bottom: 20px;
+        font-weight: lighter;
+}
+
+#quotes {font-size:18px;
+          padding-top: 10px;
+          padding-bottom: 20px;
+
+}
+
+.masthead .ui.menu .ui.button { margin-left: 0.5em;
+}
+
+/* Center piece with logo and button */
+.masthead h1.ui.header {
+      margin-top: 1em;
+      margin-bottom: 0em;
+      font-size: 4em;
+      font-weight: normal;
+    }
+
+.masthead h2 {
+      font-size: 1.7em;
+      font-weight: normal;
+    }
+
+    .ui.vertical.stripe {
+      padding: 8em 0em;
+    }
+    .ui.vertical.stripe h3 {
+      font-size: 2em;
+    }
+
+    .ui.vertical.stripe .floated.image {
+      clear: both;
+    }
+    .ui.vertical.stripe p {
+      font-size: 1.33em;
+    }
+    .ui.vertical.stripe .horizontal.divider {
+      margin: 3em 0em;
+    }
+
+    .quote.stripe.segment {
+      padding: 0em;
+    }
+    .quote.stripe.segment .grid .column {
+      padding-top: 5em;
+      padding-bottom: 5em;
+    }
+
+    .footer.segment {
+      padding: 5em 0em;
+    }
+
+    .secondary.pointing.menu .toc.item {
+      display: none;
+    }
+
+    @media only screen and (max-width: 700px) {
+      .ui.fixed.menu {
+        display: none !important;
+      }
+      .secondary.pointing.menu .item,
+      .secondary.pointing.menu .menu {
+        display: none;
+      }
+      .secondary.pointing.menu .toc.item {
+        display: block;
+      }
+      .masthead.segment {
+        min-height: 350px;
+      }

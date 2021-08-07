@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% set active_page = "product" %}
+
+{% block body %}
+<body>
+    <div class="ui segment">
+      <h2 class="ui center aligned header">
+        Product Information </h2>
+    </div>
+     <table class="ui selectable inverted table">
+          <thead>
+            <tr>
+              <th>Product Name</th>
+              <th>Color</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+      <tbody>
+
+    {% for result in results %}
+            <tr>
+                <td>{{ result[1] }}</td>
+                <td>{{ result[2] }}</td>
+                <td>{{ result[3] }}</td>
+                
+            </tr>
+    {% endfor %}
+
+      </tbody>
+    </table>
+</body>
+{% endblock %}

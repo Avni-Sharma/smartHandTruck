@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+    <div class="ui vertical stripe segment">
+      <div class="ui error message">
+        <i class="close icon"></i>
+        <div class="header">
+          <p>Uh Oh!</p>
+ 
+        <p>Error => {{ error }}</p>
+        <a href="/order" class="ui primary right labeled icon button">
+          <i class="right arrow icon"></i>
+          Order Again
+        </a>
+      </div>
+    </div>
+
+{% endblock %}

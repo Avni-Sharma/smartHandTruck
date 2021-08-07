@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% set active_page = "index" %}
+
+{% block body %}
+<body>
+<div class="pusher">
+  <div class="ui inverted vertical masthead center aligned segment">
+
+    <div class="ui text container">
+      <h1 class="ui inverted header">
+        Smart Hand Trucks Inc.
+      </h1>
+      <h2>Do whatever you want when you want to.</h2>
+      <a href="/product"> <div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div></a>
+    </div>
+
+  </div>
+
+  <div class="ui vertical stripe segment">
+    <div class="ui middle aligned stackable grid container">
+      <div class="row">
+        <div class="eight wide column">
+          <h3 class="ui header">We Build The Best Hand Trucks</h3>
+          <p>Whether you're moving, gardening, or just simply decorating, we've got it all! Select from a wide variety of hand trucks.</p>
+          <h3 class="ui header">Not a Member Yet? </h3>
+          <p>Sign up to be our valued customer to enjoy best prices, cheap shipping, and more!</p>
+        </div>
+        <div class="six wide right floated column">
+          <img src="static/images/In-Use1.jpg" class="ui large bordered rounded image">
+        </div>
+      </div>
+      <div class="row">
+        <div class="center aligned column">
+          <a href="/register" class="ui huge button"> Sign Up Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="ui vertical stripe quote segment">
+    <div class="ui equal width stackable internally celled grid">
+      <div class="center aligned row">
+        <div class="column">
+          <h3>"Best Investment Ever"</h3>
+          <p>That is what they all say about us</p>
+        </div>
+        <div class="column">
+          <h3>"Perfect for gardening all the way to heavy-duty."</h3>
+          <p>
+            -- Chief Fun Officer Acme Toys
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui vertical stripe segment">
+    <div class="ui text container">
+      <h3 class="ui header">Your Search for the Best Hand Trucks Stops Here!</h3>
+      <p>Instead of focusing on content creation and hard work, we have learned how to master the art of doing nothing by providing massive amounts of whitespace and generic content that can seem massive, monolithic and worth your attention.</p>
+      <a class="ui large button">Read More</a>
+    </div>
+  </div>
+</body>
+{% endblock %}

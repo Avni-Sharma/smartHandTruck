@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div class="ui vertical stripe segment">
+     <div class="ui left aligned container">
+       <form class="ui form" method='POST'>
+         {{form.hidden_tag()}}
+         <div class="field">
+           <label> {{form.Email.label}}</label>
+           {{form.Email()}}
+           <!-- <input type="text" name="Email" placeholder="Serge@gnabry.com"> -->
+           </div>
+         <div class="field">
+           <label>{{form.FirstName.label}}</label>
+           {{form.FirstName()}}
+          <!-- <input type="text" name="first-name" placeholder="Email"> -->
+         </div>
+         <div class="field">
+           <label>{{form.LastName.label}}</label>
+           {{form.LastName()}}
+           <!-- <input type="text" name="last-name" placeholder="Last Name"> -->
+         </div>
+         <div class="field">
+           <label> {{form.Phone.label}}</label>
+           {{form.Phone()}}
+           <!-- <input type="password" name="Password" placeholder="Password"> -->
+           </div>
+           <div class="field">
+             <label> {{form.Zip.label}}</label>
+             {{form.Zip()}}
+             <!-- <input type="password" name="Password" placeholder="Password"> -->
+             </div>
+         <!-- <button class="positive ui button" type="submit">Create Account</button> -->
+         {{form.update(class="ui primary button")}}
+       </form>
+       </div>
+   </div>
+
+{% endblock %}

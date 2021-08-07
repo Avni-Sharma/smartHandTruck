@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+    <div class="ui vertical stripe segment">
+      <div class="ui success message">
+        <i class="close icon"></i>
+        <div class="header">
+          Order placed Successfully.
+        </div>
+        <p>For more orders please visit</p>
+        <a href="/order" class="ui primary right labeled icon button">
+          <i class="right arrow icon"></i>
+          Order Again
+        </a>
+      </div>
+    </div>
+    
+        <div class="ui segment">
+      <h2 class="ui center aligned header">
+      Order Detail </h2>
+    </div>
+     <table class="ui selectable inverted table">
+          <thead>
+            <tr>
+              <th>Order Detail</th>
+              <th>Product ID</th>
+              <th>Order ID</th>
+              <th>Quantity</th>
+            </tr>
+          </thead>
+      <tbody>
+
+    {% for result in orderdets %}
+            <tr>
+                <td>{{ result[0] }}</td>
+                <td>{{ result[1] }}</td>
+                <td>{{ result[2] }}</td>
+                <td>{{ result[3] }}</td>
+                
+            </tr>
+    {% endfor %}
+
+      </tbody>
+    </table>
+
+{% endblock %}

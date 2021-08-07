@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% set active_page = "customertable" %}
+
+{% block body %}
+
+
+
+<div class="ui vertical stripe segment">
+  <div class="ui left aligned container">
+
+    <table class="ui inverted celled table">
+      <thead>
+        <tr>
+        <th>Customer ID</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Zip</th>
+      </tr></thead>
+      <tbody>
+
+        {% for customer in customers %}
+          <td data-label="Customer_ID">{{customer.Customer_ID}}</td>
+          <td data-label="FirstName">{{customer.FirstName}}</td>
+          <td data-label="LastName">{{customer.LastName}}</td>
+          <td data-label="Email">{{customer.Email}}</td>
+          <td data-label="Phone">{{customer.Phone}}</td>
+          <td data-label="Zip">{{customer.Zip}}</td>
+          <td>
+            <a href='/updatecustomer' class="ui icon button">
+              <i class="edit outline icon"></i>
+            </a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+      <tfoot class="full-width">
+        <tr>
+          <th>
+          </th>
+          <th colspan="6">
+            <a  href='/deletecustomer' class="ui right floated small primary labeled icon button">
+              <i class="user icon"></i> Delete Customer
+            </a>
+            <a href='/register' class="ui right floated small primary labeled icon button">
+              <i class="user icon"></i> Add Customer
+            </a>
+          </th>
+        </tr>
+      </tfoot>
+    </table>
+
+
+    </div>
+   </div>
+
+{% endblock %}
